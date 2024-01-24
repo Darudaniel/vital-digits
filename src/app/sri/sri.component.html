@@ -1,0 +1,21 @@
+<div>
+  <h2>Peso del paciente:</h2>
+  <form #miFormulario="ngForm" (ngSubmit)="submitForm(miFormulario)">
+    <!-- Campos del formulario -->
+    <label for="peso">Peso:</label>
+    <input type="number" id="peso" name="peso" ngModel required>
+    <!-- Botón de envío -->
+    <button type="submit">Calcular</button>
+  </form>
+</div>
+
+@if (peso) {
+  <div>
+    <p>Para un paciente de {{ peso }} kilogramos de peso se deberia usar:</p>
+    <p>Fentanilo: {{ dosisFentanilo }} mg </p>
+    <p>Ketamina: {{ dosisKetamina }} mg </p>
+    <p>Succinilcolina: {{ dosisSuccinil }} mg </p>
+  </div>
+} @else {
+  <p>Escribe el peso del paciente</p>
+}
